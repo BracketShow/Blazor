@@ -1,0 +1,19 @@
+﻿@layout MainLayout
+@inherits BlazorLayoutComponent
+
+<div class="row presentation-page slide-page">
+    @SlideTitleFragment
+
+    <div class="col-md-12">
+        @SlideBodyFragment
+    </div>
+</div>
+
+@functions
+{
+    [Parameter]
+    RenderFragment SlideTitleFragment { get; set; }
+
+    [Parameter]
+    RenderFragment SlideBodyFragment { get; set; }
+}

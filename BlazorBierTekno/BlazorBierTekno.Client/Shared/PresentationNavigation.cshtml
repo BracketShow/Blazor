@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Blazor.Browser.Services
+@using Microsoft.AspNetCore.Blazor.Services
+@inject IUriHelper UriHelper
+<div class="row presentation-navigation">
+    <div class="col-md-1">
+        <button id="backNav" onclick="@NavigateBack" class="oi oi-arrow-thick-left"></button>
+    </div>
+    <div class="col-md-1 offset-md-10">
+        <button id="frontNav" onclick="@NavigateForward" class="oi oi-arrow-thick-right"></button>
+    </div>
+</div>
+
+@functions
+{
+
+    [Parameter]
+    string BackNavigationRoute { get; set; }
+
+
+    [Parameter]
+    string ForwardNavigationRoute { get; set; }
+
+    void NavigateBack()
+    {
+        //UriHelper.NavigateTo(BackNavigationRoute);
+    }
+
+    void NavigateForward()
+    {
+        UriHelper.NavigateTo(ForwardNavigationRoute);
+    }
+
+    //[JSInvokable]
+    //public static void NavigateTo()
+    //{
+    //    BrowserUriHelper.Instance.NavigateTo("/fetchdata");
+    //}
+
+}

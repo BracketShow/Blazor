@@ -1,0 +1,55 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">BlazorBierTekno</a>
+    <button class="navbar-toggler" onclick=@ToggleNavMenu>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
+    <ul class="nav flex-column">
+        @*<li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match=NavLinkMatch.All>
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>*@
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="pourquoi-blazor">
+                <span class="oi oi-plus" aria-hidden="true"></span> Pourquoi Blazor
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="comment-fonctionne">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Comment ça fonctionne
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="fonctions-utilisables">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Présentement
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="fonctions-a-venir">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> À venir
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="pourquoi-pas-blazor">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Pourquoi PAS Blazor
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="conclusion">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Conclusion
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@functions {
+    bool collapseNavMenu = true;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
