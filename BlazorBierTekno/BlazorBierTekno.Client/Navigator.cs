@@ -13,9 +13,17 @@ namespace BlazorBierTekno.Client
         private static readonly List<string> Routes = new List<string>
         {
             "/",
+            "/presentation",
             "/pourquoi-blazor",
-            "/pourquoi-blazor/1",
+            "/pourquoi-blazor/fullstack",
+            "/pourquoi-blazor/pourquoi/1",
+            "/pourquoi-blazor/pourquoi/2",
+            "/pourquoi-blazor/pourquoi/3",
+            "/pourquoi-blazor/pourquoi/4",
+            "/pourquoi-blazor/pourquoi/5",
             "/comment-fonctionne",
+            "/pourquoi-blazor/before-web-assembly",
+            "/pourquoi-blazor/web-assembly",
             "/fonctions-utilisables",
             "/fonctions-a-venir",
             "/pourquoi-pas-blazor",

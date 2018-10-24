@@ -31,13 +31,22 @@
     <Content Update="Pages\WhyBlazorWillFail\WhyBlazorWillFailSection.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\HowItWorks\BeforeWebAssemblySlide.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\WhyBlazor\WhyBlazorSlide.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\HowItWorks\WebAssemblySlide.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\WhyBlazor\WhyBlazorSection.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Shared\SlideTitle.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Shared\SlideLayout.cshtml">
+    <Content Update="Shared\SlideLayoutComponent.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>
