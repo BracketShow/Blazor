@@ -10,6 +10,12 @@
   display: table;
   width: 95%;
 }
+.section-page .section-title h1 {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  display: table-cell;
+}
 .section-page .section-side {
   height: 95%;
   background-color: #ce1d20;
@@ -25,10 +31,11 @@
 .slide-page .slide-title h1 {
   margin-top: 10px;
 }
+.slide-page .slide-content {
+  font-size: 48px;
+  margin-top: 20px;
+}
 h1 {
   color: #FFFFFF;
   font-size: 60px;
-}
-.presentation-navigation button {
-  visibility: hidden;
 }

@@ -1,5 +1,5 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">BlazorBierTekno</a>
+    <a class="navbar-brand" href="">Bièr&Teknö</a>
     <button class="navbar-toggler" onclick=@ToggleNavMenu>
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,39 +7,34 @@
 
 <div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
     <ul class="nav flex-column">
-        @*<li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match=NavLinkMatch.All>
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>*@
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="pourquoi-blazor">
-                <span class="oi oi-plus" aria-hidden="true"></span> Pourquoi Blazor
+                <span class="oi oi-question-mark" aria-hidden="true"></span> Pourquoi Blazor
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="comment-fonctionne">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Comment ça fonctionne
+                <span class="oi oi-wrench" aria-hidden="true"></span> Comment ça fonctionne
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="fonctions-utilisables">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Présentement
+                <span class="oi oi-lock-unlocked" aria-hidden="true"></span> Présentement
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="fonctions-a-venir">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> À venir
+                <span class="oi oi-lock-locked" aria-hidden="true"></span> À venir
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="pourquoi-pas-blazor">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Pourquoi PAS Blazor
+                <span class="oi oi-ban" aria-hidden="true"></span> Pourquoi PAS Blazor
             </NavLink>
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="conclusion">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Conclusion
+                <span class="oi oi-pulse" aria-hidden="true"></span> Conclusion
             </NavLink>
         </li>
     </ul>
