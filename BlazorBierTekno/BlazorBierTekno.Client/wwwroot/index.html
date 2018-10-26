@@ -19,9 +19,9 @@
 <script>
     $(document).keydown(function(e) {
         if (e.which === 37) {
-            DotNet.invokeMethodAsync('BlazorBierTekno.Client', 'NavigateBack');
+            DotNet.invokeMethodAsync('BlazorBierTekno.Client', 'NavigateBack', window.location.href);
         } else if (e.which === 39) {
-            DotNet.invokeMethodAsync('BlazorBierTekno.Client', 'NavigateForward');
+            DotNet.invokeMethodAsync('BlazorBierTekno.Client', 'NavigateForward', window.location.href);
         }
     });
 </script>

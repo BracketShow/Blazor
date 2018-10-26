@@ -5,38 +5,7 @@
         <SlideTitle Title="Pourquoi Blazor ?" />
     </SlideTitleFragment>
     <SlideBodyFragment>
-        <ul class="">
-            @if (Section >= 1)
-            {
-                <li>
-                    Du “vrai” class-based OOP au niveau du navigateur.
-                </li>
-            }
-            @if (Section >= 2)
-            {
-                <li>
-                    On bénéficie du côté type-safe de C#.
-                </li>
-            }
-            @if (Section >= 3)
-            {
-                <li>
-                    Mettre à profit les compétences existantes de nos développeurs en C#/Razor.
-                </li>
-            }
-            @if (Section >= 4)
-            {
-                <li>
-                    On évite la duplication de code et de modèles entre C# et Typescript/Javascript.
-                </li>
-            }
-            @if (Section >= 5)
-            {
-                <li>
-                    On n’utilise plus (ou presque) Javascript.
-                </li>
-            }
-        </ul>
+        <BulletListComponent Section="@Section" Elements="@_elements"/>
     </SlideBodyFragment>
 </SlideLayoutComponent>
 
@@ -44,4 +13,13 @@
 {
     [Parameter]
     private int Section { get; set; }
+
+    private readonly Dictionary<int, string> _elements = new Dictionary<int, string>
+    {
+        {1, "Du \"vrai\" class-based OOP au niveau du navigateur." },
+        {2, "On bénéficie du côté type-safe de C#." },
+        {3, "Mettre à profit les compétences existantes de nos développeurs en C#/Razor." },
+        {4, "On évite la duplication de code et de modèles entre C# et Typescript/Javascript." },
+        {5, "On n’utilise plus (ou presque) Javascript." },
+    };
 }

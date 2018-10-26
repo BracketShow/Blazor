@@ -1,0 +1,44 @@
+﻿@page "/comment-fonctionne/blazor/{section:int}"
+
+<SlideLayoutComponent>
+    <SlideTitleFragment>
+        <SlideTitle Title="Comment ça fonctionne..."/>
+    </SlideTitleFragment>
+    <SlideBodyFragment>
+        <div class="row @(Section <= 2 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section <= 2 ? "" : "display: none;")">
+            <div class="col-md-6">
+                <BulletListComponent Section="@Section" Elements="@_interpretedElements" />
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="images/interpreted-mode.png" class="img-how-it-works" />
+            </div>
+        </div>
+        <div class="row @(Section > 2 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section > 2 ? "" : "display: none;")">
+            <div class="col-md-6">
+                <BulletListComponent Section="@Section" Elements="@_aheadOfTimeElements" />
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="images/aot-mode.png" class="img-how-it-works" />
+            </div>
+        </div>
+    </SlideBodyFragment>
+</SlideLayoutComponent>
+
+@functions
+{
+    [Parameter]
+    int Section { get; set; }
+
+    private readonly Dictionary<int, string> _interpretedElements = new Dictionary<int, string>
+    {
+        {1, "Le navigateur peut exécuter le runtime Mono grâce à WebAssembly." },
+        {2, "Le runtime Mono peut alors charger et exécuter notre code netstandard, qui a été compilé tout à fait normalement." }
+    };
+
+    private readonly Dictionary<int, string> _aheadOfTimeElements = new Dictionary<int, string>
+    {
+        {3, "Ici, notre application est transformée en binaire WebAssembly." },
+        {4, "Plus long à compiler" },
+        {5, "Pas nécessairement plus rapide vu la taille des librairies .NET." }
+    };
+}

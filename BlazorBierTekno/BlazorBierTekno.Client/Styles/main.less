@@ -68,6 +68,19 @@
     }
 }
 
+.slide-element-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slide-element-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+}
+
 h1 {
     color: @mainTextColor;
     font-size: 60px;
@@ -77,7 +90,6 @@ h1 {
     max-height: 175px;
 }
 
-.iconic-media-stop {
-    fill: @sideColor;
-    stroke: @sideColor;
+.img-how-it-works {
+    width: 95%;
 }

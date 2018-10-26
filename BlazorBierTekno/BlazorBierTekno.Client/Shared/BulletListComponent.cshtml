@@ -1,0 +1,16 @@
+﻿<ul>
+    @foreach (var element in Elements)
+    {
+        <li class="@(Navigator.GetVisibilityClass(Section, element.Key))">
+            @element.Value
+        </li>
+    }
+</ul>
+
+@functions {
+    [Parameter]
+    int Section { get; set; }
+
+    [Parameter]
+    Dictionary<int, string> Elements { get; set; }
+}

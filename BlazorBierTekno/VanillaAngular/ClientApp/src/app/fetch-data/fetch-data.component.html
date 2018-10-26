@@ -1,9 +1,15 @@
+
+
+
+
+
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
-
+<p *ngIf="!forecasts">
+  <em>Loading...</em>
+</p>
 <table class='table' *ngIf="forecasts">
   <thead>
     <tr>
@@ -22,3 +28,4 @@
     </tr>
   </tbody>
 </table>
+
