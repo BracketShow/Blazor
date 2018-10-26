@@ -1,13 +1,47 @@
-﻿@page "/pourquoi-blazor/pourquoi/1"
+﻿@page "/pourquoi-blazor/pourquoi/{section:int}"
 
 <SlideLayoutComponent>
     <SlideTitleFragment>
-        <SlideTitle Title="Développeur Full Stack"/>
+        <SlideTitle Title="Pourquoi Blazor ?" />
     </SlideTitleFragment>
     <SlideBodyFragment>
-        Hello from a fragment
-        <div>
-
-        </div>
+        <ul class="">
+            @if (Section >= 1)
+            {
+                <li>
+                    Du “vrai” class-based OOP au niveau du navigateur.
+                </li>
+            }
+            @if (Section >= 2)
+            {
+                <li>
+                    On bénéficie du côté type-safe de C#.
+                </li>
+            }
+            @if (Section >= 3)
+            {
+                <li>
+                    Mettre à profit les compétences existantes de nos développeurs en C#/Razor.
+                </li>
+            }
+            @if (Section >= 4)
+            {
+                <li>
+                    On évite la duplication de code et de modèles entre C# et Typescript/Javascript.
+                </li>
+            }
+            @if (Section >= 5)
+            {
+                <li>
+                    On n’utilise plus (ou presque) Javascript.
+                </li>
+            }
+        </ul>
     </SlideBodyFragment>
 </SlideLayoutComponent>
+
+@functions
+{
+    [Parameter]
+    private int Section { get; set; }
+}

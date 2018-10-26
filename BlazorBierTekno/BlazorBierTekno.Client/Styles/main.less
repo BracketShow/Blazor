@@ -44,11 +44,40 @@
 
     .slide-content {
         font-size: 48px;
-        margin-top: 20px;
+        margin-top: 10px;
+        height: 85%;
+
+        ul {
+            padding-left: 23px;
+
+            li {
+                display: block;
+
+                &:before {
+                    content: '\e099';
+                    font-family: 'Icons';
+                    font-size: 36px;
+                    float: left;
+                    margin-top: 8px;
+                    margin-left: -36px;
+                    margin-right: 8px;
+                    color: @sideColor;
+                }
+            }
+        }
     }
 }
 
 h1 {
     color: @mainTextColor;
     font-size: 60px;
+}
+
+.img-fluid {
+    max-height: 175px;
+}
+
+.iconic-media-stop {
+    fill: @sideColor;
+    stroke: @sideColor;
 }

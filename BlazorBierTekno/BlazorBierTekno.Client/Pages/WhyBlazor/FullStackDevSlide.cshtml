@@ -1,13 +1,50 @@
-﻿@page "/pourquoi-blazor/fullstack"
+﻿@page "/pourquoi-blazor/fullstack/{section:int}"
 
 <SlideLayoutComponent>
     <SlideTitleFragment>
         <SlideTitle Title="Développeur Full Stack"/>
     </SlideTitleFragment>
     <SlideBodyFragment>
-        Hello from a fragment
-        <div>
-
-        </div>
+        @if (Section >= 1)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    Développeur <i>full stack</i> aujourd'hui :
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="images/microsoft-net.png" class="img-fluid"/>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="images/angular.png" class="img-fluid"/>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="images/typescript.png" class="img-fluid"/>
+                </div>
+                <div class="col-md-3 text-center">
+                    <img src="images/javascript.png" class="img-fluid"/>
+                </div>
+            </div>
+        }
+        @if (Section >= 2)
+        {
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12">
+                    Développeur <i>full stack</i> de demain avec Blazor :
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="images/microsoft-net.png" class="img-fluid"/>
+                </div>
+            </div>
+        }
     </SlideBodyFragment>
 </SlideLayoutComponent>
+
+@functions
+{
+    [Parameter]
+    private int Section { get; set; }
+}

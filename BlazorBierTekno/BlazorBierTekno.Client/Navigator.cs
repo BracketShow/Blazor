@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
 using Microsoft.JSInterop;
 
@@ -15,19 +14,20 @@ namespace BlazorBierTekno.Client
             "/",
             "/presentation",
             "/pourquoi-blazor",
-            "/pourquoi-blazor/fullstack",
+            "/pourquoi-blazor/fullstack/1",
+            "/pourquoi-blazor/fullstack/2",
             "/pourquoi-blazor/pourquoi/1",
             "/pourquoi-blazor/pourquoi/2",
             "/pourquoi-blazor/pourquoi/3",
             "/pourquoi-blazor/pourquoi/4",
             "/pourquoi-blazor/pourquoi/5",
             "/comment-fonctionne",
-            "/pourquoi-blazor/before-web-assembly",
-            "/pourquoi-blazor/web-assembly",
-            "/fonctions-utilisables",
-            "/fonctions-a-venir",
-            "/pourquoi-pas-blazor",
-            "/conclusion"
+            //"/pourquoi-blazor/before-web-assembly",
+            //"/pourquoi-blazor/web-assembly",
+            //"/fonctions-utilisables",
+            //"/fonctions-a-venir",
+            //"/pourquoi-pas-blazor",
+            //"/conclusion"
         };
 
         [JSInvokable]
