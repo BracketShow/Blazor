@@ -19,6 +19,12 @@
     <Content Update="Pages\Conclusion\ConclusionSection.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\Conclusion\ConclusionSlide.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\CurrentFeatures\RoutingSlide.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\CurrentFeatures\ComponentCodeSlide.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
@@ -34,7 +40,13 @@
     <Content Update="Pages\HowItWorks\Blazor.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Pages\UpcomingFeatures\UpcomingFeaturesSlide.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Pages\UpcomingFeatures\UpcomingFeaturesSection.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Pages\WhyBlazorWillFail\WhyBlazorWillFailSlide.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Pages\WhyBlazorWillFail\WhyBlazorWillFailSection.cshtml">

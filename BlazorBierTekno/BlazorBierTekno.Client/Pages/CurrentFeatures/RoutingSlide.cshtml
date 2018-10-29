@@ -1,0 +1,36 @@
+﻿@page "/fonctions-utilisables/routing/{section:int}"
+
+<SlideLayoutComponent>
+    <SlideTitleFragment>
+        <SlideTitle Title="Routing"/>
+    </SlideTitleFragment>
+    <SlideBodyFragment>
+        <div class="row">
+            <div class="col-md-6 @(Navigator.GetVisibilityClass(Section, 1))">
+                <div class="col-md-12 text-center">
+                    Angular / Typescript
+                </div>
+                <div class="col-md-12">
+                    <img src="images/routing-angular.png" class="img-how-it-works"/>
+                </div>
+            </div>
+            <div class="col-md-6 @(Navigator.GetVisibilityClass(Section, 2))">
+                <div class="col-md-12 text-center">
+                    Blazor
+                </div>
+                <div class="col-md-12">
+                    <img src="images/routing-blazor.png" class="img-how-it-works" />
+                </div>
+                <div style="margin-top: 10px;" class="col-md-12 @(Navigator.GetVisibilityClass(Section, 3))">
+                    <img src="images/routing-blazor-2.png" class="img-how-it-works" />
+                </div>
+            </div>
+        </div>
+    </SlideBodyFragment>
+</SlideLayoutComponent>
+
+@functions
+{
+    [Parameter]
+    int Section { get; set; }
+}

@@ -36,6 +36,9 @@
   margin-top: 10px;
   height: 85%;
 }
+.slide-page .slide-content .conclusion-demo {
+  font-size: 24px;
+}
 .slide-page .slide-content ul {
   padding-left: 23px;
 }
@@ -51,6 +54,9 @@
   margin-left: -36px;
   margin-right: 8px;
   color: #ce1d20;
+}
+.slide-page .slide-content pre {
+  font-size: 32px;
 }
 .slide-element-hidden {
   opacity: 0;

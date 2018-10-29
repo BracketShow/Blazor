@@ -1,0 +1,29 @@
+﻿@page "/conclusion/{section:int}"
+
+<SlideLayoutComponent>
+    <SlideTitleFragment>
+        <SlideTitle Title="Conclusion"/>
+    </SlideTitleFragment>
+    <SlideBodyFragment>
+        <div class="row @(Section <= 3 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section <= 3 ? "" : "display: none;")">
+            <BulletListComponent Section="@Section" Elements="@_elements"/>
+        </div>
+        <div class="row @(Section > 3 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section > 3 ? "" : "display: none;")">
+            <FetchData />
+        </div>
+    </SlideBodyFragment>
+</SlideLayoutComponent>
+
+@functions
+{
+    [Parameter]
+    private int Section { get; set; }
+
+    private readonly Dictionary<int, string> _elements = new Dictionary<int, string>
+    {
+        {1, "Peu importe la techno, Wasm semble être un grand pas en avant"},
+        {2, "Blazor semble prendre du momentum et de la popularité (support de R# déjà disponible)"},
+        {3, "Une démo ?" }
+    };
+
+}

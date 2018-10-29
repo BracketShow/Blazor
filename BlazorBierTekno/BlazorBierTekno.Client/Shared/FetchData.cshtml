@@ -1,0 +1,54 @@
+﻿@using BlazorBierTekno.Shared
+@inject HttpClient Http
+
+<div class="conclusion-demo">
+    <p>Allons chercher la météo à partir d'un API.</p>
+    
+    <input placeholder="Pour quelle ville ?" bind="@citySearch" onfocusout="@SearchCity" />
+
+    @if (forecasts == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var forecast in forecasts.list)
+            {
+                <tr>
+                    <td>@forecast.weather.First().description</td>
+                    <td>@forecast.main.temp</td>
+                    <td>@forecast.weather.First().main</td>
+                    <td>@forecast.weather.First().id</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+</div>
+
+@functions {
+    string citySearch = string.Empty;
+
+    ResponseWeatherForecast forecasts;
+
+    protected override async Task OnInitAsync()
+    {
+        //forecasts = await Http.GetJsonAsync<WeatherForecast[]>("api/SampleData/WeatherForecasts");
+    }
+
+    async void SearchCity()
+    {
+        //forecasts = await Http.GetJsonAsync<ResponseWeather>($"api/SampleData/WeatherForecasts/{citySearch}");
+        forecasts = await Http.GetJsonAsync<ResponseWeatherForecast>($"http://api.openweathermap.org/data/2.5/forecast?q={citySearch}&appid=a21ff7bf210de8be6ea2214336b0c7de");
+    }
+}

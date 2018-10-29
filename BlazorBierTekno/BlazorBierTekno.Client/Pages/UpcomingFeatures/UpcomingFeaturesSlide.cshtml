@@ -1,0 +1,24 @@
+﻿@page "/fonctions-a-venir/{section:int}"
+
+<SlideLayoutComponent>
+    <SlideTitleFragment>
+        <SlideTitle Title="Fonctionnalités à venir"/>
+    </SlideTitleFragment>
+    <SlideBodyFragment>
+        <BulletListComponent Section="@Section" Elements="@_elements"/>
+    </SlideBodyFragment>
+</SlideLayoutComponent>
+
+@functions
+{
+    [Parameter]
+    private int Section { get; set; }
+
+    private readonly Dictionary<int, string> _elements = new Dictionary<int, string>
+    {
+        {1, "Server-side rendering"},
+        {2, "Full .NET debugging (navigateur et IDE)"},
+        {3, "Live reloading dans le navigateur pendant le développement"},
+        {4, "Librairie de tests unitaires permettant de simuler les événements et tester le rendu."}
+    };
+}
