@@ -63,7 +63,7 @@ namespace BlazorBierTekno.Client
 
         private static void CheckIndex(string href)
         {
-            href = href.Replace("http://localhost:57711", string.Empty);
+            href = href.Replace("http://localhost:3285", string.Empty);
             _currentIndex = Routes.IndexOf(href);
         }
 

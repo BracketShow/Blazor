@@ -1,3 +1,6 @@
+body {
+  overflow: hidden;
+}
 .presentation-page {
   width: 82%;
   height: 100%;
@@ -22,7 +25,7 @@
 }
 .slide-page .slide-title {
   background-color: #2d2e2f;
-  height: 15%;
+  height: 100px;
   text-align: center;
   vertical-align: middle;
   display: table;
@@ -56,7 +59,7 @@
   color: #ce1d20;
 }
 .slide-page .slide-content pre {
-  font-size: 32px;
+  font-size: 30px;
 }
 .slide-element-hidden {
   opacity: 0;
