@@ -5,10 +5,10 @@
         <SlideTitle Title="Conclusion"/>
     </SlideTitleFragment>
     <SlideBodyFragment>
-        <div class="row @(Section <= 3 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section <= 3 ? "" : "display: none;")">
+        <div class="@(Section <= 3 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section <= 3 ? "" : "display: none;")">
             <BulletListComponent Section="@Section" Elements="@_elements"/>
         </div>
-        <div class="row @(Section > 3 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section > 3 ? "" : "display: none;")">
+        <div class="@(Section > 3 ? "slide-element-visible" : "slide-element-hidden")" style="@(Section > 3 ? "" : "display: none;")">
             <FetchData />
         </div>
     </SlideBodyFragment>
