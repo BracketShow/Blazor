@@ -31,9 +31,6 @@ namespace BlazorBierTekno.Client
             "/comment-fonctionne/web-assembly",
             "/comment-fonctionne/blazor/1",
             "/comment-fonctionne/blazor/2",
-            "/comment-fonctionne/blazor/3",
-            "/comment-fonctionne/blazor/4",
-            "/comment-fonctionne/blazor/5",
             "/fonctions-utilisables",
             "/fonctions-utilisables/components-html/1",
             "/fonctions-utilisables/components-html/2",
@@ -63,7 +60,7 @@ namespace BlazorBierTekno.Client
 
         private static void CheckIndex(string href)
         {
-            href = href.Replace("http://localhost:3285", string.Empty);
+            href = href.Replace("http://localhost:57711", string.Empty);
             _currentIndex = Routes.IndexOf(href);
         }
 
