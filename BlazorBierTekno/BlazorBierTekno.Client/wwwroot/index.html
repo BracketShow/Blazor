@@ -18,9 +18,10 @@
 
 <script>
     $(document).keydown(function (e) {
-        if (e.which === 37) {
+        if ((e.which || e.keyCode) === 116 || (e.which || e.keyCode) === 82) e.preventDefault();
+        if (e.which === 37 || e.which === 33) {
             DotNet.invokeMethodAsync('BlazorBierTekno.Client', 'NavigateBack', window.location.href);
-        } else if (e.which === 39) {
+        } else if (e.which === 39 || e.which === 34) {
             DotNet.invokeMethodAsync('BlazorBierTekno.Client', 'NavigateForward', window.location.href);
         }
     });
