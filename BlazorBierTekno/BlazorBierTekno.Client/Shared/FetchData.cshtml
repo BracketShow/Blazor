@@ -3,52 +3,96 @@
 
 <div class="conclusion-demo">
     <p>Allons chercher la météo à partir d'un API.</p>
-    
-    <input placeholder="Pour quelle ville ?" bind="@citySearch" onfocusout="@SearchCity" />
 
-    @if (forecasts == null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else
-    {
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var forecast in forecasts.list)
+    <div class="row">
+        <div class="col-md-12">
+            <input placeholder="Pour quelle ville ?" bind="@citySearch"/>
+            <button class="btn btn-primary" onclick="@SearchCity">Recherche</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @if (showInfo)
             {
-                <tr>
-                    <td>@forecast.weather.First().description</td>
-                    <td>@forecast.main.temp</td>
-                    <td>@forecast.weather.First().main</td>
-                    <td>@forecast.weather.First().id</td>
-                </tr>
+                <p>
+                    <em>@infoText</em>
+                </p>
             }
-            </tbody>
-        </table>
-    }
+            else if (forecasts != null)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>Information</strong>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Ville: @forecasts.city.name</label>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Longitude / Lattitude: @forecasts.city.coord.lon / @forecasts.city.coord.lat</label>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Population: @forecasts.city.population</label>
+                    </div>
+                </div>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th></th>
+                        <th>Temp. (C)</th>
+                        <th>Humidité (%)</th>
+                        <th>Vent (m/sec)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var forecast in forecasts.list)
+                    {
+                        <tr>
+                            <td>@forecast.FormattedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                            <td>
+                                @foreach (var weather in forecast.weather)
+                                {
+                                    @weather.main <img src="@weather.IconImagePath"/>
+                                }
+                            </td>
+                            <td>@forecast.Temperature</td>
+                            <td>@forecast.Humidity</td>
+                            <td>@forecast.WindSpeed</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
 </div>
 
 @functions {
+    const string Recherche = "Recherche en cours...";
+    const string RechercheVide = "Je gère les string vides...";
+
     string citySearch = string.Empty;
+    bool showInfo;
+    string infoText = Recherche;
 
     ResponseWeatherForecast forecasts;
 
-    protected override async Task OnInitAsync()
+    async Task SearchCity()
     {
-        //forecasts = await Http.GetJsonAsync<WeatherForecast[]>("api/SampleData/WeatherForecasts");
+        if (string.IsNullOrEmpty(citySearch))
+        {
+            infoText = RechercheVide;
+            showInfo = true;
+        }
+        else
+        {
+            infoText = Recherche;
+            showInfo = true;
+            forecasts = await Http.GetJsonAsync<ResponseWeatherForecast>($"http://api.openweathermap.org/data/2.5/forecast?q={citySearch}&units=metric&appid=a21ff7bf210de8be6ea2214336b0c7de");
+            showInfo = false;
+        }
     }
 
-    async void SearchCity()
-    {
-        //forecasts = await Http.GetJsonAsync<ResponseWeather>($"api/SampleData/WeatherForecasts/{citySearch}");
-        forecasts = await Http.GetJsonAsync<ResponseWeatherForecast>($"http://api.openweathermap.org/data/2.5/forecast?q={citySearch}&appid=a21ff7bf210de8be6ea2214336b0c7de");
-    }
 }
