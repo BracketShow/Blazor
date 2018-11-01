@@ -1,15 +1,7 @@
 ﻿@import '../Styles/variables.less';
 
-.main {
-    height: 100vh;
-}
-
-.content {
-    //height: 100vh;
-}
-
-.body {
-    overflow: unset;
+body {
+    overflow: hidden;
 
     .conclusion-demo & {
         overflow: visible;
@@ -90,6 +82,8 @@
 
         .conclusion-demo {
             font-size: 20px;
+            overflow-y: auto;
+            overflow-x: hidden;
 
             table {
                 margin-top: 10px;

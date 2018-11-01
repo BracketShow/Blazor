@@ -1,10 +1,7 @@
-.main {
-  height: 100vh;
+body {
+  overflow: hidden;
 }
-.body {
-  overflow: unset;
-}
-.conclusion-demo .body {
+.conclusion-demo body {
   overflow: visible;
 }
 .sidebar {
@@ -68,6 +65,8 @@
 }
 .slide-page .slide-content .conclusion-demo {
   font-size: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .slide-page .slide-content .conclusion-demo table {
   margin-top: 10px;
