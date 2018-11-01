@@ -78,10 +78,9 @@ namespace BlazorBierTekno.Shared
         public string name { get; set; }
         public int cod { get; set; }
 
-        private readonly DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-        public DateTime FormattedDate => epoch.AddSeconds(dt);
+        public DateTimeOffset FormattedDate => DateTimeOffset.FromUnixTimeSeconds(dt);
 
-        public double Temperature => main?.temp ?? 0;
+        public double Temperature => Math.Round(main.temp);
 
         public int Humidity => main?.humidity ?? 0;
 

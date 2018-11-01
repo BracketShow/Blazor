@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <input placeholder="Pour quelle ville ?" bind="@citySearch"/>
+            <input placeholder="Pour quelle ville ?" bind="@citySearch" />
             <button class="btn btn-primary" onclick="@SearchCity">Recherche</button>
         </div>
     </div>
@@ -50,7 +50,7 @@
                     @foreach (var forecast in forecasts.list)
                     {
                         <tr>
-                            <td>@forecast.FormattedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                            <td>@forecast.FormattedDate.ToOffset(TimeSpan.FromHours(-4)).ToString("yyyy-MM-dd HH:mm")</td>
                             <td>
                                 @foreach (var weather in forecast.weather)
                                 {
@@ -88,11 +88,11 @@
         }
         else
         {
+            if (!citySearch.Contains(",")) citySearch += ", CA";
             infoText = Recherche;
             showInfo = true;
             forecasts = await Http.GetJsonAsync<ResponseWeatherForecast>($"http://api.openweathermap.org/data/2.5/forecast?q={citySearch}&units=metric&appid=a21ff7bf210de8be6ea2214336b0c7de");
             showInfo = false;
         }
     }
-
 }
