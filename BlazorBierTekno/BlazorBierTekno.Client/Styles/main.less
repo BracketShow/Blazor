@@ -1,26 +1,50 @@
 ﻿@import '../Styles/variables.less';
 
+.main {
+    height: 100vh;
+}
+
+.content {
+    //height: 100vh;
+}
+
 .body {
-    overflow: hidden;
+    overflow: unset;
 
     .conclusion-demo & {
         overflow: visible;
     }
 }
 
+.sidebar {
+    overflow: unset;
+
+    .logo {
+        text-align: center;
+        position: absolute;
+        margin-bottom: 0vh;
+        bottom: 0;
+
+        img {
+            width: 250px;
+        }
+    }
+}
+
 .presentation-page {
-    width: 82%;
-    height: 100%;
-    position: absolute;
+    margin-top: -18px;
+    margin-left: -32px;
+    margin-right: -24px;
+    height: 100vh;
 }
 
 .section-page {
     .section-title {
         background-color: @mainColor;
-        height: 95%;
+        height: 100%;
         text-align: center;
         display: table;
-        width: 95%;
+        width: 75%;
         
         h1 {
             margin: 0;
@@ -31,9 +55,16 @@
     }
 
     .section-side {
-        height: 95%;
+        height: 100%;
+        width: 25%;
         background-color: @sideColor;
     }
+}
+
+.centered-image {
+    text-align: center;
+    margin-top: 100px;
+    width: 80%;
 }
 
 .slide-page {
@@ -53,6 +84,8 @@
     .slide-content {
         font-size: 48px;
         margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
         height: 85%;
 
         .conclusion-demo {
